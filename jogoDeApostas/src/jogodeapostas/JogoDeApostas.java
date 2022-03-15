@@ -19,18 +19,23 @@ public class JogoDeApostas {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        try{
+            
             int x, y;
-        do{
-            Scanner entrada = new Scanner(System.in);
-            System.out.println("Introdusa o seu numero da sorte: ");
-            x = entrada.nextInt();
-            System.out.printf("o teu numero da sorte e %d \n", x);
+            do{
+                Scanner entrada = new Scanner(System.in);
+                System.out.println("Introdusa o seu numero da sorte: ");
+                x = entrada.nextInt();
+                System.out.printf("o teu numero da sorte e %d \n", x);
         
-            Random aleatorio = new Random();
-            y = aleatorio.nextInt(1, 9);
-            System.out.printf("O numero do sistema e %d \n ", y);
-        }while(x!=y);
+                Random aleatorio = new Random();
+                y = aleatorio.nextInt(1, 9);
+                System.out.printf("O numero do sistema e %d \n ", y);
+            }while(x!=y);
         
+        }catch (Exception e) {
+            System.out.println("Ocorreu um erro de Systema!!! \n");
+        }
     }
     
 }
