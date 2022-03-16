@@ -22,7 +22,6 @@ public class JogoDeApostas {
         try{
             
             int x, y;
-            int processo = 0;
             
             do{
                 Scanner entrada = new Scanner(System.in);
@@ -30,7 +29,7 @@ public class JogoDeApostas {
                 x = entrada.nextInt();
                     
                     if(x>=1 & x<=9){
-                        System.out.println("Obrigado");
+                        System.out.println("\n Obrigado");
                     }else{
                         System.out.println("O valor Inserido e invalido!");
                     }
@@ -39,31 +38,23 @@ public class JogoDeApostas {
                 y = aleatorio.nextInt(1, 9);
                 
                 if(x==y){
-                    System.out.print("processando");
-                    while(processo<=3){
-                        System.out.printf(". ");
-                        processo++;
-                    }
                         System.out.println(" ");
-                        System.out.println("Parabens, voce ganhou!");
+                        System.out.println("Parabens, voce ganhou!\n");
                         System.out.printf("Numero do Sistema = %d \n", y);
                         System.out.printf("O Numero inserido = %d \n", x);
                 } else{
-                    System.out.print("processando");
-                    while(processo<=3){
-                        System.out.printf(". ");
-                        processo++;
-                    }
                         System.out.println(" ");
-                        System.out.println("Voce perdeu!");
+                        System.out.println("\n Voce perdeu!\n");
                         System.out.printf("Numero do Sistema = %d \n", y);
                         System.out.printf("O Numero inserido = %d \n", x);
                         System.out.println("\n Tente de novo \n");
+                         Thread.sleep(3000);
+                                 
                 }
             }while(x!=y);
             
         }catch (Exception e) {
-            System.out.println("Ocorreu um erro de Systema!!! \n");
+            System.out.println("Ocorreu um erro de Sistema!!! \n");
         }
     }
     
