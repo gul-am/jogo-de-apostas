@@ -23,26 +23,45 @@ public class JogoDeApostas {
             
             int x, y;
             int processo = 0;
+            
             do{
                 Scanner entrada = new Scanner(System.in);
                 System.out.println("Introdusa o seu numero da sorte: ");
                 x = entrada.nextInt();
+                    
                     if(x>=1 & x<=9){
-                        System.out.printf("o teu numero da sorte e %d \n", x);
+                        System.out.println("Obrigado");
                     }else{
                         System.out.println("O valor Inserido e invalido!");
                     }
+                
                 Random aleatorio = new Random();
                 y = aleatorio.nextInt(1, 9);
                 
+                if(x==y){
+                    System.out.print("processando");
+                    while(processo<=3){
+                        System.out.printf(". ");
+                        processo++;
+                    }
+                        System.out.println(" ");
+                        System.out.println("Parabens, voce ganhou!");
+                        System.out.printf("Numero do Sistema = %d \n", y);
+                        System.out.printf("O Numero inserido = %d \n", x);
+                } else{
+                    System.out.print("processando");
+                    while(processo<=3){
+                        System.out.printf(". ");
+                        processo++;
+                    }
+                        System.out.println(" ");
+                        System.out.println("Voce perdeu!");
+                        System.out.printf("Numero do Sistema = %d \n", y);
+                        System.out.printf("O Numero inserido = %d \n", x);
+                        System.out.println("\n Tente de novo \n");
+                }
             }while(x!=y);
             
-            System.out.print(y);
-            while(processo<=3){
-            System.out.printf(". ");
-            }
-            System.out.printf("O numero do sistema e %d \n ", y);
-        
         }catch (Exception e) {
             System.out.println("Ocorreu um erro de Systema!!! \n");
         }
