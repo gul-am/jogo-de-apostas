@@ -22,16 +22,26 @@ public class JogoDeApostas {
         try{
             
             int x, y;
+            int processo = 0;
             do{
                 Scanner entrada = new Scanner(System.in);
                 System.out.println("Introdusa o seu numero da sorte: ");
                 x = entrada.nextInt();
-                System.out.printf("o teu numero da sorte e %d \n", x);
-        
+                    if(x>=1 & x<=9){
+                        System.out.printf("o teu numero da sorte e %d \n", x);
+                    }else{
+                        System.out.println("O valor Inserido e invalido!");
+                    }
                 Random aleatorio = new Random();
                 y = aleatorio.nextInt(1, 9);
-                System.out.printf("O numero do sistema e %d \n ", y);
+                
             }while(x!=y);
+            
+            System.out.print(y);
+            while(processo<=3){
+            System.out.printf(". ");
+            }
+            System.out.printf("O numero do sistema e %d \n ", y);
         
         }catch (Exception e) {
             System.out.println("Ocorreu um erro de Systema!!! \n");
