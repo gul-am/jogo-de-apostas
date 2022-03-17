@@ -22,7 +22,7 @@ public class JogoDeApostas {
         try{
             do{ 
                 Scanner entrada = new Scanner(System.in);
-                System.out.println("Introdusa o seu numero da sorte: ");
+                System.out.println("Introdusa o seu numero da sorte \n que esteja entre 1 e 9: ");
                 x = entrada.nextInt();
                     
                 if(x>=1 & x<=9){
@@ -43,6 +43,7 @@ public class JogoDeApostas {
                         System.out.println("\n Voce perdeu!\n");
                         System.out.printf("Numero do Sistema = %d \n", y);
                         System.out.printf("O Numero inserido = %d \n", x);
+                        Thread.sleep(3000);
                         System.out.println("\n______________________________________\n Tente de novo \n");          
                     }
                          
@@ -53,7 +54,7 @@ public class JogoDeApostas {
             }while(x!=y);
             
         }catch (Exception e) {
-            System.out.println("Inseriu um dado no formato desconheciso!!! \n");
+            System.out.println("Inseriu um dado no formato desconheciso!!! \n Gerou um erro no sistema \n");
         }
     }
 }
