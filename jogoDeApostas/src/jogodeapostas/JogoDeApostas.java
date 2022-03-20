@@ -18,14 +18,36 @@ public class JogoDeApostas {
      */
     public static void main(String[] args) {
         // TODO code application logic here  
+        System.out.println("""
+                           
+                                           Instrucoes:
+                           
+                            Este programa e a simulacao de um casino.
+                            Ele tem a funcao de receber do Usuario 
+                            um numero aleatorio de 1 a 9 e comparar 
+                            com um outro numero gerado aletoriamente
+                            pelo sistema.
+                            
+                            Se os numeros forem identicos o Usuario ganha e
+                            se os numeros forem diferentes o Usuario perde!
+                           
+                            se o valo for 0 ou uma string o systema termina!
+                           (isto pode ser usado para terminar o sistema)
+                            se o valor for maior que 9 o sistema reinicia!
+                            
+                            o Sistema so para quando o usuario ganha.
+                            
+                            Boa Sorte : \n """);
+        
         int x;
         try{
+            Thread.sleep(10000);
             do{ 
                 Scanner entrada = new Scanner(System.in);
                 System.out.println("Introdusa o seu numero da sorte \n que esteja entre 1 e 9: ");
                 x = entrada.nextInt();
                     
-                if(x>=1 & x<=9){
+                if( x>=1 & x<=9){
                     System.out.println("\n Processando...");
                     Thread.sleep(3000);
                         
@@ -54,7 +76,7 @@ public class JogoDeApostas {
             }while(x!=y);
             
         }catch (Exception e) {
-            System.out.println("Inseriu um dado no formato desconheciso!!! \n Gerou um erro no sistema \n");
+            System.out.println("Inseriu um dado no formato desconhecido!!! \n Gerou um erro no sistema \n");
         }
     }
 }
