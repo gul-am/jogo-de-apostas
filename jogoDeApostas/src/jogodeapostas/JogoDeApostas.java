@@ -1,23 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+//nome do pacote
 package jogodeapostas;
 
-/**
- *
- * @author User
- */
+//importando a class Scanner para entrada de dados pelo usuario
 import java.util.Scanner;
+
+//importando a class Random para gerar numeros aleatorios automaticamente
 import java.util.Random;
 
+//nome da class
 public class JogoDeApostas {
+    
+    //Declarando uma variavel global para ser aplicavel em todos os blocos de codigo
     public static int y;
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here  
+    
+    //declarando o metodo main da class como static
+    public static void main(String[] args) {  
+         //instaciacao de um objecto Scanner para a entrada de dados
+        Scanner entrada = new Scanner(System.in);
+        
+        //imprimindo uma mensage introdutoria com instrucoes de uso
         System.out.println("""
                            
                                            Instrucoes:
@@ -38,44 +39,62 @@ public class JogoDeApostas {
                             o Sistema so para quando o usuario ganha.
                             
                             Boa Sorte : \n """);
-        
+        //inicializacao de uma varial local
         int x;
+        //Istrucao de verificacao de erros no bloco de repeticao
         try{
-            Thread.sleep(10000);
+            //instrucao para causar uma pausa de 10segundos antes de seguir para o proximo bloco
+            Thread.sleep(10000); 
+            //instrucao de repeticao condicionada
             do{ 
-                Scanner entrada = new Scanner(System.in);
+               //imprimir instrucao para collecta de dados do usuario
                 System.out.println("Introdusa o seu numero da sorte \n que esteja entre 1 e 9: ");
+                //atribuicao de valor a variavel local mediante a entrada do usuario
                 x = entrada.nextInt();
-                    
-                if( x>=1 & x<=9){
-                    System.out.println("\n Processando...");
-                    Thread.sleep(3000);
-                        
-                    Random aleatorio = new Random();
-                    y = aleatorio.nextInt(1, 9);
                 
+                //criacao do primeiro bloco IF. Verificacao das condicoes dos dados introduzidos.
+                if( x>=1 & x<=9){
+                    //imprimir caso a condicao seja satisfeita
+                    System.out.println("\n Processando...");
+                    //instrucao para causar uma pausa de 3 segundos antes de seguir para o proximo bloco
+                    Thread.sleep(3000);
+                    
+                    //instaciacao de um objecto Random para a obtencao de um numero aleatorio
+                    Random aleatorio = new Random();
+                    //atribuicao de valor aleatorio a variavel global
+                    y = aleatorio.nextInt(1, 9);
+                    
+                    //criacao do segundo bloco IF. Comparacao das variveis local e global.
                     if(x==y){
+                        //impressao de diversos linhas caso a condicao seja satisfeita
                         System.out.println(" ");
                         System.out.println("Parabens, voce ganhou!\n");
                         System.out.printf("Numero do Sistema = %d \n", y);
                         System.out.printf("O Numero inserido = %d \n", x);
-                        System.out.printf("\n", x);    
+                        System.out.printf("\n", x); 
+                   
+                      //fim do segundo bloco IF e condicao laternativa    
                     } else{
+                        //impressao de diversas linhas caso a condicao nao seja satisfeita
                         System.out.println(" ");
                         System.out.println("\n Voce perdeu!\n");
                         System.out.printf("Numero do Sistema = %d \n", y);
                         System.out.printf("O Numero inserido = %d \n", x);
+                        
+                        //instrucao para causar uma pausa de 3 segundos antes de seguir para o proximo bloco
                         Thread.sleep(3000);
                         System.out.println("\n______________________________________\n Tente de novo \n");          
                     }
-                         
+                 //Fim do primeiro bloco IF e condicao laternativa       
                 }else{
+                    //imprimir caso a condicao nao seja satisfeita
                     System.out.println("O valor Inserido e invalido!");
                 }
-                    
+            //fim do bloco de repeticao condicionada e a condicao para a repeticao do bloco     
             }while(x!=y);
-            
+        //Fim da instrucao de verificacao de erros no bloco de repeticao    
         }catch (Exception e) {
+            //imprimir caso aconteca um erro no na execucao do bloco protegido
             System.out.println("Inseriu um dado no formato desconhecido!!! \n Gerou um erro no sistema \n");
         }
     }
